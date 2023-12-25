@@ -8,7 +8,7 @@ $mainPath = "<INFORME O DIRETÓRIO AQUI>"
 $files = Get-ChildItem -Path $mainPath -Recurse -File
 
 foreach ($file in $files) {
-    $newName = $file.BaseName -replace "\s+\(EXEMPLO_COM_PARÊNTESES\)", "" -replace "\s+\(MAIS STRINGS\)", ""
+    $newName = $file.BaseName -replace "\s+\(PARTE A SER REMOVIDA\)", "" -replace "\s+\(outra parte a ser removida\)", ""
     $newPath = Join-Path -Path $file.Directory.FullName -ChildPath ($newName + $file.Extension)
     Rename-Item -Path $file.FullName -NewName $newPath -Force
 }
